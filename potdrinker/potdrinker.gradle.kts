@@ -1,5 +1,5 @@
-version = "0.0.1"
-project.extra["PluginName"] = "NMZ Pot drinker" // This is the name that is used in the external plugin manager panel
+version = "0.0.2"
+project.extra["PluginName"] = "Quick NMZ" // This is the name that is used in the external plugin manager panel
 project.extra["PluginDescription"] = "An automatic pot drinker" // This is the description that is used in the external plugin manager panel
 
 plugins{
