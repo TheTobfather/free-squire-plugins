@@ -35,9 +35,9 @@ import javax.inject.Inject
 
 @Extension
 @PluginDescriptor(
-    name = "WoodCutter",
-    description = "Automatic Woodcutter",
-    tags = ["woodcutting"]
+        name = "WoodCutter",
+        description = "Automatic Woodcutter",
+        tags = ["woodcutting"]
 )
 class WoodCutterPlugin : LoopedPlugin() {
 
@@ -99,8 +99,11 @@ class WoodCutterPlugin : LoopedPlugin() {
                     }
                 }
                 States.DROP_INVENTORY -> {
+                    BankLocation.getNearest()
+                    MessageUtils.addMessage("Attempting to Bank")
+                    Time.sleepUntil({Players.getLocal().isAnimating}, 2000)
                     for(Item in Inventory.getAll { it.id == config.treeType().logId }){
-                        Item.interact("Drop")
+                        Item.interact("Bank")
                         Time.sleep(sleepDelay())
                     }
                 }
