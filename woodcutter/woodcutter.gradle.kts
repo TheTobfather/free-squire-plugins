@@ -1,6 +1,6 @@
 version = "0.0.4"
 project.extra["PluginName"] = "Woodcutter" // This is the name that is used in the external plugin manager panel
-project.extra["PluginDescription"] = "An automatic woodcutter" // This is the description that is used in the external plugin manager panel
+project.extra["PluginDescription"] = "An automatic woodcutter with experimental banking" // This is the description that is used in the external plugin manager panel
 
 plugins{
     kotlin("kapt")
