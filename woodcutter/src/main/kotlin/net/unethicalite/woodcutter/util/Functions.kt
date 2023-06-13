@@ -32,7 +32,7 @@ class Functions {
             return States.HANDLE_BREAK
         }
         if(Inventory.isFull()){
-            return States.DROP_INVENTORY
+            return States.BANKING
         }
         if(!Players.getLocal().isAnimating){
             val tree: TileObject? = TileObjects.getNearest { it.name.equals(config.treeType().tree) && it.distanceTo(Players.getLocal()) < 10 }

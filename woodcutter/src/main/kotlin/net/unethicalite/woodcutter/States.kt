@@ -4,5 +4,6 @@ enum class States {
     DROP_INVENTORY,
     CUT_TREE,
     HANDLE_BREAK,
+    BANKING,
     UNKNOWN
 }
