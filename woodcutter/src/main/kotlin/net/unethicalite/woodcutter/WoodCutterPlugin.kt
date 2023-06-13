@@ -98,10 +98,13 @@ class WoodCutterPlugin : LoopedPlugin() {
                         Time.sleepUntil({Players.getLocal().isAnimating}, 2000)
                     }
                 }
-                States.DROP_INVENTORY -> {
-                    BankLocation.getNearest()
+                States.BANKING -> {
                     MessageUtils.addMessage("Attempting to Bank")
-                    Time.sleepUntil({Players.getLocal().isAnimating}, 2000)
+                    BankLocation.getNearest()
+                    val bank: TileObject? = TileObjects.getNearest { it.distanceTo(startLocation) }
+                    bank?.let {
+                        it.interact("Bank")
+                        Time.sleepUntil({Players.getLocal().isAnimating}, 2000)
                     for(Item in Inventory.getAll { it.id == config.treeType().logId }){
                         Item.interact("Bank")
                         Time.sleep(sleepDelay())
